@@ -46,19 +46,19 @@ const agregarTarea = () => {
     
     if (tarea.value == "") {
         tarea.classList.add("animate__animated", "animate__tada");
-        return false;
+        return false; //Detengo la ejecución de mi script
     } else {
         tarea.classList.remove("animate__animated", "animate__tada");
     }
 
-    const nuevaTarea = {nombre:tarea.value, completada:false};
-    tareas.push(nuevaTarea);
-    tarea.value = "";
-    renderTareas();
+    const nuevaTarea = {nombre:tarea.value, completada:false}; //Creo un nuevo Objeto
+    tareas.push(nuevaTarea); //Agregar el objeto creado al array Tareas
+    tarea.value = ""; //Limpiar el contenido del campo Tarea
+    renderTareas(); //Renderizar las Tareas
 }
 
 const completarTarea = (nombre) => {
-    let tarea = tareas.find(item => item.nombre === nombre);
+    let tarea = tareas.find(item => item.nombre === nombre); //Buscar en el array un elemento que coincida con ese nombre
 
     if (tarea.completada) {
         tarea.completada = false;
