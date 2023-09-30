@@ -1,2 +1,2 @@
-renderCarrito();
+renderProducto();
 renderBotonCarrito();
